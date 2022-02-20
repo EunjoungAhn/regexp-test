@@ -1,5 +1,5 @@
 //` 백틱 기호를 사용하면 줄바꿈 처리를 할 수 있는 문자를 칠 수 있다.
-const str = `
+let str = `
 010-1234-5678 
 test@test.com
 test quick brown fox test hard Test
@@ -23,3 +23,19 @@ console.log("----------------")
 //리터널 방식
 const regexpL = /test/gi
 console.log(str.match(regexpL))
+
+
+console.log("----------------")
+//메서드 사용하기
+const regexpL2 = /quick/gi
+console.log(regexpL2.test(str))
+
+
+const regexpL3 = /quick/gi
+console.log(str.replace(regexpL3, 'fast'))
+console.log(str)
+//이 상태로는 원본을 유지하고 있어서 원본을 바꾸고 싶다면
+str = str.replace(regexpL3, 'fast') 
+//재할당을 해서 값을 넣으면 원본을 바꿀 수 있다.
+console.log(str)
+
