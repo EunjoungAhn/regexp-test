@@ -49,3 +49,9 @@ console.log(str.match(/\.$/gim))
 //라는 의미이며, 정규식 gi 다음 m 을 붙이면 전체의 값의
 //마지막을 찾는 것이 아닌, 모든 줄바꿈이 있는 줄의 마지막
 //. 마침표를 찾을 것이다. 
+
+console.log("----------------")
+//패턴 사용
+console.log(str.match(/d$/gm))
+console.log(str.match(/^t/gm))
+console.log(str.match(/^t/gim))
