@@ -3,6 +3,7 @@ let str = `
 010-1234-5678 
 test@test.com
 test quick brown fox test hard Test
+동해물과_백두산이 마르고 닳도록
 `
 
 //생성자 방식
@@ -55,3 +56,26 @@ console.log("----------------")
 console.log(str.match(/d$/gm))
 console.log(str.match(/^t/gm))
 console.log(str.match(/^t/gim))
+console.log(str.match(/[A-Z]{1,}/g))
+console.log(str.match(/\w/g))
+
+//경계에서 시작해서 f의 단어로 시작하고
+//63개의 문자중 하개 이상 일치하고 경계에서 끝나는
+//문자를 찾는다 라는 뜻이다.(소문자 f를 찾는 모든 영단어)
+console.log(str.match(/\bf\w{1,}\b/g))
+
+//숫자만 찾기
+console.log(str.match(/\d{1,}/g))
+
+//공백 찾기(줄 바꿈과, 띄어쓰기도 해당)
+console.log(str.match(/\s/g))
+
+const h = `    the   test   best  test!
+`
+//공백 구간에 빈값으로 대체해서, 공백을 없애기
+console.log(h.replace(/\s/g,''))
+
+//@이 기준으로 앞에 문자 찾기
+console.log(str.match(/.{1,}(?=@)/g))
+//뒤쪽 일치 패턴
+console.log(str.match(/(?<=@).{1,}/g))
